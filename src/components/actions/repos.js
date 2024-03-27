@@ -2,6 +2,9 @@ import axios from 'axios';
 import { setRepos, updateLoadState, setFetching } from '../../redux/reposSlice';
 
 export const getRepos = (searchQuery = "stars:%3E1") => {
+	if(searchQuery == "") {
+		searchQuery = "stars:%3E1";
+	}
 	return async (dispatch) => {
 		try {
 			dispatch(setFetching(true))
