@@ -5,6 +5,9 @@ const initialState = {
 	dataLoadState: null,
 	dataLoadError: null,
 	isFetching: true,
+	currentPage: 1,
+	perPage: 10,
+	totalCount: 0
 }
 
 export const reposSlice = createSlice({
@@ -13,7 +16,8 @@ export const reposSlice = createSlice({
 	reducers: {
 		setRepos: (state, action) => {
 			state.items = action.payload.items,
-			state.isFetching = false
+			state.isFetching = false,
+			state.totalCount = action.payload.total_count
 		},
 		updateLoadState: (state,action) => {
       state.dataLoadState = action.payload.state;
@@ -21,10 +25,13 @@ export const reposSlice = createSlice({
     },
 		setFetching: (state, action) => {
 			state.isFetching = action.payload
+		},
+		setCurrentPage: (state, action) => {
+			state.currentPage = action.payload
 		}
 	}
 })
 
-export const { setRepos, updateLoadState, setFetching } = reposSlice.actions;
+export const { setRepos, updateLoadState, setFetching, setCurrentPage } = reposSlice.actions;
 
 export default reposSlice.reducer;
