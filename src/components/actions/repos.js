@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { setRepos, updateLoadState } from '../../redux/reposSlice';
+import { setRepos, updateLoadState, setFetching } from '../../redux/reposSlice';
 
 export const getRepos = (searchQuery = "stars:%3E1") => {
 	return async (dispatch) => {
 		try {
+			dispatch(setFetching(true))
 			dispatch( updateLoadState({state:1,error:null}) );
 			const response = await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars`);
 			dispatch( updateLoadState({state:2,error:null}) );
