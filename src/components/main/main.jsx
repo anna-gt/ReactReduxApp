@@ -42,7 +42,7 @@ const Main = () => {
 			{ (repos.dataLoadState===2) && (
 				isFetching === false
 					?
-				reposData.map(repo => <Repo repo={repo} />) 
+				reposData.map((repo, index) => <Repo key={index} repo={repo} />) 
 					:
 					<div className="fetching">
 
