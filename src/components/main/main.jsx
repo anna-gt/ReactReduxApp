@@ -22,7 +22,6 @@ const Main = () => {
 
 	useEffect(() => {
 		dispatch(getRepos(searchValue, currentPage, perPage));
-		console.log(pages);
 	}, [currentPage])
 
 	function searchHandler() {
