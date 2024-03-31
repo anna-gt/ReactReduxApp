@@ -8,7 +8,7 @@ const initialState = {
 	currentPage: 1,
 	perPage: 10,
 	totalCount: 0,
-	repo: {}
+	repo: {},
 }
 
 export const reposSlice = createSlice({
@@ -32,7 +32,7 @@ export const reposSlice = createSlice({
 		},
 		setRepo: (state, action) => {
 			state.repo = action.payload
-		}
+		},
 	}
 })
 

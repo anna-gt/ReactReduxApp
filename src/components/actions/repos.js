@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setRepos, updateLoadState, setFetching, setCurrentPage, setRepo } from '../../redux/reposSlice';
+import { setRepos, updateLoadState, setFetching, setRepo } from '../../redux/reposSlice';
 
 export const getRepos = (searchQuery = "stars:%3E1", currentPage, perPage) => {
 	if(searchQuery == "") {
