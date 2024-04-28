@@ -10,8 +10,8 @@ function App() {
      <BrowserRouter basename={process.env.PUBLIC_URL}>
 		 	<div className='container'>
 				<Routes>
-					<Route path="/" element={<Main />} />
-					<Route path="/card/:username/:reponame" element={<Card />} />
+					<Route exact path="/" element={<Main />} />
+					<Route exact path="/card/:username/:reponame" element={<Card />} />
 				</Routes>
 			</div>
 		 </BrowserRouter>
