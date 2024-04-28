@@ -7,7 +7,7 @@ import './App.less'
 function App() {
 
   return (
-     <BrowserRouter>
+     <BrowserRouter basename={process.env.PUBLIC_URL}>
 		 	<div className='container'>
 				<Routes>
 					<Route path="/" element={<Main />} />
