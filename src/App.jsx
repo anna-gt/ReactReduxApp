@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter} from 'react-router-dom';
 import Main from './components/main/main';
 import Card from './components/card/card';
 import './App.less'
@@ -7,7 +7,7 @@ import './App.less'
 function App() {
 
   return (
-     <BrowserRouter basename={"/ReactReduxApp"}>
+     <HashRouter>
 			{/* <BrowserRouter basename={window.location.pathname || ''}> */}
 		 	<div className='container'>
 				<Routes>
@@ -15,7 +15,7 @@ function App() {
 					<Route path="/card/:username/:reponame" element={<Card />} />
 				</Routes>
 			</div>
-		 </BrowserRouter>
+		 </HashRouter>
   )
 }
 
